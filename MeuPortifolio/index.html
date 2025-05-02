@@ -5,49 +5,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophia Picasky Alberton</title>
-    <link rel="stylesheet" href="styles.css">   
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8U4j7z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous" />
 </head>
 
 <body>
-    <header>
-        <h1>Sophia Picasky Alberton</h1>
-        <p>Welcome to my personal webpage!</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a web developer with a passion for creating beautiful and functional websites.</p>
-        <p>In my free time, I enjoy hiking, reading, and exploring new technologies.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/sophialberton/calculadora-frela.git">Calculadora Frela</a> - A simple
-                calculator application.</li>
-            <li><a href="https://github.com/sophialberton/conta-clara.git">Conta Clara</a> - A personal finance
-                management tool.</li>
-            <li><a href="https://github.com/sophialberton/GravidadeZero.git">Gravidade Zero</a> - A game that challenges
-                your reflexes and skills.</li>
-            <li><a href="https://github.com/sophialberton/Estagio-Desenvolvimento-UltraLims.git">Estagio Desenvolvimento
-                    UltraLims</a> - A project developed during my internship.</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you would like to get in touch, feel free to reach out via email at
-            <a href="mailto:sophia.alberton@gmail.com"></a>
-        </p>
-    </section>
-    <footer>
-        <p>&copy; 2023 Sophia Picasky Alberton. All rights reserved.</p>
-        <p>Follow me on <a href="https://github.com/sophialberton">GitHub</a> and <a href="https://www.linkedin.com/in/sophia-picasky-alberton/">LinkedIn</a>.</p>
-    </footer>
+    <!--Ex3-->
+    <div class="c-magic-area c-magic-area--menu" data-target-class=".c-main-menu__link" data-tween-back="true"
+        aria-hidden="true"></div>
+    <div class="c-magic-area c-magic-area--content" data-target-class=".c-article__link" data-tween-back="false"
+        aria-hidden="true"></div>
+    <main id="page" class="o-page">
+
+        <header class="o-header">
+
+            <h1 class="c-logo"><a class="c-logo__link" href="https://github.com/sophialberton" target="_blank">Sophia Picasky
+                    Alberton</a></h1>
+            <nav class="c-main-menu" aria-labelledby="mainmenulabel">
+                <!--h2 id="mainmenulabel" class="u-visually-hidden">Main Menu</h2-->
+                <ul class="c-main-menu__list">
+                    <li><a class="c-main-menu__link" href="#home">Home</a></li>
+                    <li><a class="c-main-menu__link" href="#about">About</a></li>
+                    <li><a class="c-main-menu__link" href="#tech">Technologies</a></li>
+                    <li><a class="c-main-menu__link" href="#projects">Projects</a></li>
+                    <li><a class="c-main-menu__link" href="#contact">Contact</a></li>
+                </ul>
+                <!--header>
+                <h1>Sophia Picasky Alberton</h1>
+                <p>Welcome to my personal webpage!</p>
+            </header-->
+                <!--nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav-->
+            </nav>
+        </header>
+        <!--Ex3-->
+
+        <!--Home-->
+        <section id="home">
+            <h2 class="c-main-heading">Welcome!</h2>
+            <p>I'm a Software Engineering student at the Catholic University of Santa Catarina in Brazil, currently in
+                my second semester out of eight.</p>
+            <p>I enjoy creating beautiful and functional fullstack websites, solving logic puzzles, and constantly
+                learning new things.</p>
+            <p>In my free time, I like crocheting, reading, and exploring new technologies</p>
+        </section>
+
+        <!--Sobre mim-->
+        <section id="about">
+            <h2 class="c-main-heading">About me</h2>
+            <p>I'm a Software Engineering student at the Catholic University of Santa Catarina in Brazil, currently in
+                my second semester out of eight.</p>
+            <p>I enjoy creating beautiful and functional fullstack websites, solving logic puzzles, and constantly
+                learning new things.</p>
+            <p>In my free time, I like crocheting, reading, and exploring new technologies</p>
+        </section>
+
+        <!--Tecnologias-->
+        <section id="tech">
+            <h2 class="c-main-heading">Technologies</h2>
+            <ul class="skills-bar-container">
+  
+                <li>
+                  <div class="progressbar-title">
+                    <h3>HTML5</h3>
+                    <span class="percent" id="html-pourcent"></span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progressbar progressred" id="progress-html"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="progressbar-title">
+                    <h3>CSS / SASS</h3>
+                    <span class="percent" id="css-pourcent"></span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progressbar progressblue" id="progress-css"></span>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="progressbar-title">
+                    <h3>JavaScript / jQuery</h3>
+                    <span class="percent" id="javascript-pourcent"></span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progressbar progresspurple" id="progress-javascript"></span>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="progressbar-title">
+                    <h3>PHP</h3>
+                    <span class="percent" id="php-pourcent"></span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progressbar progressorange" id="progress-php"></span>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="progressbar-title">
+                    <h3>AngularJS</h3>
+                    <span class="percent" id="angular-pourcent"></span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progressbar progressgreen" id="progress-angular"></span>
+                  </div>
+                </li>
+              </ul>
+        </section>
+
+
+        <!-- Ex3 Inspo para projetos -->
+        <section id="projects" class="o-main-section">
+
+            <div class="section-content">
+                <h2 class="c-main-heading">Portfolio</h2>
+                
+                <article class="c-article">
+                    <a class="c-article__link" href="#">
+                        <div>
+                            <header>
+                                <h3 class="c-article__heading">Calculadora para freelancer</h3>
+                            </header>
+                            <div class="c-article__content">
+                                Uma calculadora que solicita ao usuário suas preferencias e custos para calcular o valor da
+                                hora ideal.
+                            </div>
+                        </div>
+                        <div class="c-article__img-wrapper">
+                            <img class="c-article__img" src="https://assets.codepen.io/204808/shin-yun-bok-ink.png"
+                            alt="Ink transition with PNG sprite" />
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="c-article">
+                    <a class="c-article__link" href="#">
+                        <div>
+                            <header>
+                                <h3 class="c-article__heading">Responsive Mondrian art with CSS grid</h3>
+                            </header>
+                            <div class="c-article__content">
+                                Make a responsive Mondrian art with CSS grid layout.
+                            </div>
+                        </div>
+                        <div class="c-article__img-wrapper">
+                            <img class="c-article__img" src="https://assets.codepen.io/204808/css-grid-mondrian.png"
+                            alt="Responsive Mondrian art with CSS grid" />
+                        </div>
+                    </a>
+                </article>
+                
+            <article class="c-article">
+                <a class="c-article__link" href="#">
+                    <div>
+                        <header>
+                            <h3 class="c-article__heading">Space rocket with requestAnimationFrame</h3>
+                        </header>
+                        <div class="c-article__content">
+                            Create the space rocket animation with stars in different perspective.
+                        </div>
+                    </div>
+                    <div class="c-article__img-wrapper">
+                        <img class="c-article__img"
+                        src="https://assets.codepen.io/204808/17.Space-Rocket-with-requestAnimationFrame.png"
+                        alt="Responsive Mondrian art with CSS grid" />
+                    </div>
+                </a>
+            </article>
+        </div>
+        </section>
+        <!--Ex3-->
+
+        
+        <!--Contato-->
+        <section id="contact">
+            <h2 class="c-main-heading">Contact</h2>
+            <section id="contact">
+                <p>If you would like to get in touch, feel free to reach out via email at
+                    <a href="mailto:sophia.alberton@gmail.com"></a>
+                </p>
+            </section>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Sophia Picasky Alberton. All rights reserved.</p>
+            <p>Follow me on <a href="https://github.com/sophialberton">GitHub</a> and <a
+                    href="https://www.linkedin.com/in/sophia-picasky-alberton/">LinkedIn</a>.</p>
+        </footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
 
 </html>
