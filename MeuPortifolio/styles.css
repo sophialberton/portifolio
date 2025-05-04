@@ -302,6 +302,14 @@ p {
   z-index: 1;
 }
 
+.start-header {
+	padding: 20px 0;
+	transition: all 0.3s ease-out;
+}
+.start-header.scroll-on {
+	padding: 10px 0;
+}
+
 /*================================================================Minhas tecnologias*/
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 
