@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Estudante de TI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Cor de fundo suave */
+            color: #334155; /* Cor de texto padrão */
+        }
+        /* Estiliza o foco dos botões para acessibilidade */
+        button:focus, a:focus {
+            outline: 2px solid #6366f1; /* Anel de foco roxo */
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-6 shadow-lg rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold rounded-md p-2">Portfólio da Estudante</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#sobre" class="hover:text-indigo-200 transition duration-300 ease-in-out">Sobre Mim</a></li>
+                    <li><a href="#projetos" class="hover:text-indigo-200 transition duration-300 ease-in-out">Projetos</a></li>
+                    <li><a href="#habilidades" class="hover:text-indigo-200 transition duration-300 ease-in-out">Habilidades</a></li>
+                    <li><a href="#contato" class="hover:text-indigo-200 transition duration-300 ease-in-out">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre" class="container mx-auto my-12 p-8 bg-white shadow-xl rounded-xl flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+        <div class="flex-shrink-0">
+            <img src="https://placehold.co/200x200/6366f1/ffffff?text=Sua+Foto" alt="Foto de Perfil" class="rounded-full w-48 h-48 object-cover border-4 border-indigo-500 shadow-md">
+        </div>
+        <div class="text-center md:text-left max-w-2xl">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Olá! Eu sou [Seu Nome]</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Estudante de TI apaixonada por [sua área de interesse, ex: desenvolvimento web, ciência de dados, cibersegurança].
+                Atualmente, estou aprimorando minhas habilidades em [tecnologias, ex: Python, JavaScript, React] e buscando
+                oportunidades para aplicar meus conhecimentos em projetos desafiadores.
+            </p>
+            <a href="#contato" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105">
+                Entre em Contato
+            </a>
+        </div>
+    </section>
+
+    <section id="projetos" class="container mx-auto my-12 p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">Meus Projetos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <img src="https://placehold.co/400x250/a78bfa/ffffff?text=Projeto+1" alt="Imagem do Projeto 1" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">Nome do Projeto 1</h3>
+                <p class="text-gray-600 mb-4">
+                    Uma breve descrição do Projeto 1. Este projeto envolveu [tecnologias usadas, ex: React, Node.js] e resolveu [problema resolvido].
+                </p>
+                <div class="flex justify-between items-center">
+                    <a href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-semibold transition duration-300 ease-in-out">Ver Projeto &rarr;</a>
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-gray-700 text-sm">Código &rarr;</a>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <img src="https://placehold.co/400x250/818cf8/ffffff?text=Projeto+2" alt="Imagem do Projeto 2" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">Nome do Projeto 2</h3>
+                <p class="text-gray-600 mb-4">
+                    Uma breve descrição do Projeto 2. Foco em [sua área, ex: análise de dados, machine learning] usando [tecnologias].
+                </p>
+                <div class="flex justify-between items-center">
+                    <a href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-semibold transition duration-300 ease-in-out">Ver Projeto &rarr;</a>
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-gray-700 text-sm">Código &rarr;</a>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <img src="https://placehold.co/400x250/c4b5fd/ffffff?text=Projeto+3" alt="Imagem do Projeto 3" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">Nome do Projeto 3</h3>
+                <p class="text-gray-600 mb-4">
+                    Uma breve descrição do Projeto 3. Este foi um projeto colaborativo focado em [área] e implementado com [tecnologias].
+                </p>
+                <div class="flex justify-between items-center">
+                    <a href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-semibold transition duration-300 ease-in-out">Ver Projeto &rarr;</a>
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-gray-700 text-sm">Código &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="container mx-auto my-12 p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">Minhas Habilidades</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">Python</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">JavaScript</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">HTML & CSS</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">React</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">SQL</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">Git & GitHub</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">Estruturas de Dados</span>
+            <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-5 py-2 rounded-full shadow-sm">Algoritmos</span>
+            </div>
+    </section>
+
+    <section id="contato" class="container mx-auto my-12 p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">Entre em Contato</h2>
+        <div class="max-w-xl mx-auto">
+            <p class="text-center text-gray-700 mb-8">
+                Tenho interesse em colaborar em projetos e estou aberta a novas oportunidades. Sinta-se à vontade para me contatar!
+            </p>
+            <form class="space-y-6">
+                <div>
+                    <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="mensagem" class="block text-sm font-medium text-gray-700">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105">
+                        Enviar Mensagem
+                    </button>
+                </div>
+            </form>
+            <div class="text-center mt-8">
+                <p class="text-gray-600">Ou me encontre em:</p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out">
+                        GitHub
+                    </a>
+                    <a href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 rounded-t-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
