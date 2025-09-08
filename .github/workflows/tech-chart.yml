@@ -1,0 +1,35 @@
+name: Generate Tech Stack Chart
+
+# Este workflow roda sempre que houver um push na branch 'main'
+on:
+  push:
+    branches:
+      - main # Se sua branch principal for 'master', troque aqui
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clona o seu repositório para a máquina virtual do GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Roda a ação que gera o gráfico de tecnologias
+      - name: Generate Tech Stack Chart
+        uses: sarocha/tech-stack-card@v2
+        with:
+          # Define o caminho para o arquivo que será atualizado
+          file-path: 'README.md'
+          # Token de autenticação necessário para fazer alterações no repositório
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Salva e envia as alterações de volta para o seu repositório
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          # Faz o commit apenas se houverem alterações no arquivo
+          git commit -m "chore: update tech stack chart" || echo "No changes to commit"
+          git push
