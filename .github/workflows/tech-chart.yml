@@ -1,11 +1,9 @@
 name: Generate Repository Metrics
 
 on:
-  # Roda sempre que houver um push na branch 'main'
   push:
     branches:
       - main
-  # Também roda uma vez por dia para manter atualizado
   schedule:
     - cron: "0 0 * * *"
 
@@ -13,25 +11,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permissão para o bot salvar a imagem no repositório
+      contents: write
 
     steps:
+      # 1. Alteração aqui: Faz o download completo do repositório
+      - name: Checkout full repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # O '0' força o download do histórico completo
+
+      # 2. Gera o gráfico
       - name: Generate repository metrics
         uses: lowlighter/metrics@latest
         with:
-          # Nome do arquivo de imagem que será gerado
           filename: metrics.languages.svg
-
-          # Token para que a action possa ler os dados do seu repositório
           token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Plugins e configurações
-          base: "" # Não queremos os gráficos padrão, apenas o de linguagens
+          base: "" 
           plugin_languages: yes
-          plugin_languages_details: bytes-size, percentage # Mostra o % de uso
-          plugin_languages_limit: 8 # Mostra as 8 linguagens mais usadas
-
-          # LINHAS NOVAS ABAIXO:
-          plugin_languages_threshold: 0%      # <-- Garante que todas as linguagens apareçam
-          plugin_languages_sections: graphs   # <-- Diz para mostrar a seção de gráficos
-          plugin_languages_graphs: pie        # <-- Especifica que o gráfico deve ser de pizza
+          plugin_languages_threshold: 0%
+          plugin_languages_limit: 8
+          
+          # Alteração aqui: Muda o visual para o estilo de barra clássico
+          plugin_languages_layout: classic
