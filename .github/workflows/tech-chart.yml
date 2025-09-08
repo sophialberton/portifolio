@@ -1,29 +1,23 @@
-name: Generate Tech Stack Chart
+name: Display Metrics
 
 on:
+  # Roda ao fazer push e também a cada 24 horas
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * *' # Roda à meia-noite
 
 jobs:
-  build:
+  metrics:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Ação corrigida aqui 👇
-      - name: Generate Tech Stack Chart
-        uses: bgoonz/tech-stack-card@v2
+      - uses: lowlighter/metrics@latest
         with:
-          file-path: 'README.md'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "chore: update tech stack chart" || echo "No changes to commit"
-          git push
+          # Token de autenticação
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Configurações para o gráfico
+          base: "header, activity, community, repositories, metadata"
+          plugin_languages: yes
+          plugin_languages_limit: 8 # Mostra as 8 linguagens mais usadas
+          plugin_languages_threshold: 0%
