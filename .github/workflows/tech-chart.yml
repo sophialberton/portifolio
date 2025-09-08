@@ -1,23 +1,34 @@
-name: Display Metrics
+name: Generate Repository Metrics
 
 on:
-  # Roda ao fazer push e também a cada 24 horas
+  # Roda sempre que houver um push na branch 'main'
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+  # Também roda uma vez por dia para manter atualizado
   schedule:
-    - cron: '0 0 * * *' # Roda à meia-noite
+    - cron: "0 0 * * *"
 
 jobs:
-  metrics:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permissão para o bot salvar a imagem no repositório
+
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Generate repository metrics
+        uses: lowlighter/metrics@latest
         with:
-          # Token de autenticação
+          # Nome do arquivo de imagem que será gerado
+          filename: metrics.languages.svg
+
+          # Token para que a action possa ler os dados do seu repositório
           token: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Configurações para o gráfico
-          base: "header, activity, community, repositories, metadata"
+
+          # Plugins e configurações
+          base: "" # Não queremos os gráficos padrão, apenas o de linguagens
           plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage # Mostra o % de uso
           plugin_languages_limit: 8 # Mostra as 8 linguagens mais usadas
-          plugin_languages_threshold: 0%
+          plugin_languages_ignored: >- # Linguagens para ignorar (opcional)
+            html, css, markdown
