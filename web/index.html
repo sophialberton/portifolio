@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<div class="background-grid"></div>
 <body>
     <header>
         <nav>
@@ -26,9 +27,15 @@
 
     <main>
         <section id="intro" class="container">
-            <h1 data-pt="Olá, Mundo! Eu sou a Sophia!" data-en="Hello, World! I'm Sophia!">Olá, Mundo! Eu sou a Sophia!</h1>
-            <p data-pt="Junior Fullstack Developer" data-en="Junior Fullstack Developer">Junior Fullstack Developer</p>
-        </section>
+    <div class="intro-content">
+        <h1 class="gradient-text" data-pt="Olá, Mundo! Eu sou a Sophia!" data-en="Hello, World! I'm Sophia!">Olá, Mundo! Eu sou a Sophia!</h1>
+        <p data-pt="Junior Fullstack Developer" data-en="Junior Fullstack Developer">Junior Fullstack Developer</p>
+        <div class="intro-buttons">
+            <a href="#projects" class="hero-btn hero-btn-primary" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</a>
+            <a href="#contact" class="hero-btn hero-btn-outline" data-pt="Entrar em Contato" data-en="Get in Touch">Entrar em Contato</a>
+        </div>
+    </div>
+</section>
 
         <section id="about" class="container">
             <h2 data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
@@ -57,16 +64,54 @@
         </section>
 
         <section id="projects" class="container">
-            <h2 data-pt="Projetos" data-en="Projects">Projetos</h2>
-            <div class="project-card">
+    <h2 data-pt="Projetos" data-en="Projects">Projetos</h2>
+    <div class="projects-grid">
+        <div class="project-item">
+            <div class="project-content">
                 <h3 data-pt="EmailRH | Automação" data-en="EmailRH | Automation">EmailRH | Automação</h3>
                 <p data-pt="Um projeto de backend que automatiza o envio de emails de aniversário para os colaboradores de uma empresa."
                    data-en="A backend project that automates sending birthday emails to company employees.">
                    Um projeto de backend que automatiza o envio de emails de aniversário para os colaboradores de uma empresa.
                 </p>
-                <a href="https://github.com/sophialberton/email-senior-graph-RH.git" target="_blank" class="cta-button" data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</a>
+                <a href="https://github.com/sophialberton/email-senior-graph-RH.git" target="_blank" class="cta-button" data-pt="Ver no GitHub" data-en="View on GitHub"><span>Ver no GitHub</span></a>
             </div>
-        </section>
+        </div>
+
+        <div class="project-item placeholder">
+            <div class="project-content">
+                <h3 data-pt="Próximo Projeto Incrível" data-en="Next Amazing Project">Próximo Projeto Incrível</h3>
+                <p data-pt="Descrição do seu próximo projeto aqui."
+                   data-en="Description of your next project here.">
+                   Descrição do seu próximo projeto aqui.
+                </p>
+                <a href="#" class="cta-button"><span>Ver Detalhes</span></a>
+            </div>
+        </div>
+        
+        <div class="project-item placeholder">
+             <div class="project-content">
+                <h3 data-pt="Outro Projeto" data-en="Another Project">Outro Projeto</h3>
+                <p data-pt="Descrição do seu próximo projeto aqui."
+                   data-en="Description of your next project here.">
+                   Descrição do seu próximo projeto aqui.
+                </p>
+                <a href="#" class="cta-button"><span>Ver Detalhes</span></a>
+            </div>
+        </div>
+
+        <div class="project-item placeholder">
+             <div class="project-content">
+                <h3 data-pt="Portfólio Pessoal" data-en="Personal Portfolio">Portfólio Pessoal</h3>
+                <p data-pt="O design e desenvolvimento deste próprio site."
+                   data-en="The design and development of this very site.">
+                   O design e desenvolvimento deste próprio site.
+                </p>
+                <a href="#" class="cta-button"><span>Ver Detalhes</span></a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
         <section id="github-stats" class="container">
             <h2 data-pt="Estatísticas do GitHub" data-en="GitHub Stats">Estatísticas do GitHub</h2>
@@ -77,19 +122,75 @@
         </section>
 
         <section id="contact" class="container">
-            <h2 data-pt="Contato" data-en="Contact">Contato</h2>
-            <p data-pt="Vamos conversar! Pode encontrar-me aqui:" data-en="Let's talk! You can find me here:">Vamos conversar! Pode encontrar-me aqui:</p>
-            <div class="social-links">
-                <a href="https://instagram.com/guaphia" target="_blank">Instagram</a>
-                <a href="https://linkedin.com/in/sophia-picasky-alberton" target="_blank">LinkedIn</a>
-                <a href="https://pinterest.com/guaphia" target="_blank">Pinterest</a>
+    <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+    <p data-pt="Vamos conversar! Pode me encontrar aqui ou me enviar uma mensagem:" data-en="Let's talk! You can find me here or send me a message:">Vamos conversar! Pode me encontrar aqui ou me enviar uma mensagem:</p>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <p data-pt="Sinta-se à vontade para se conectar comigo nas redes sociais." data-en="Feel free to connect with me on social media.">Sinta-se à vontade para se conectar comigo nas redes sociais.</p>
+            <div class="social-links-vertical">
+                <a href="https://instagram.com/guaphia" target="_blank"><span>Instagram</span></a>
+                <a href="https://linkedin.com/in/sophia-picasky-alberton" target="_blank"><span>LinkedIn</span></a>
+                <a href="https://pinterest.com/guaphia" target="_blank"><span>Pinterest</span></a>
             </div>
-        </section>
+        </div>
+
+        <div class="contact-form">
+            <h3 data-pt="Envie uma mensagem" data-en="Send a message">Envie uma mensagem</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name" data-pt="Nome" data-en="Name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-pt="Email" data-en="Email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="subject" data-pt="Assunto" data-en="Subject">Assunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button full-width" data-pt="Enviar Mensagem" data-en="Send Message"><span>Enviar Mensagem</span></button>
+            </form>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer>
+    <div class="container footer-content">
+        <div class="footer-logo">
+            Sophia Picasky Alberton
+        </div>
+
+        <div class="footer-nav">
+            <a href="#about" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</a>
+            <a href="#skills" data-pt="Habilidades" data-en="Skills">Habilidades</a>
+            <a href="#projects" data-pt="Projetos" data-en="Projects">Projetos</a>
+            <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://instagram.com/guaphia" target="_blank" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com/in/sophia-picasky-alberton" target="_blank" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://pinterest.com/guaphia" target="_blank" title="Pinterest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.017 1.987c-5.424 0-8.913 3.486-8.913 8.02 0 3.204 1.96 6.038 4.88 7.21.507.216.63.33.433.856-.18 2.11-.734 3.482-.734 3.482s.272-.12.946-.51c.89-.51 1.628-1.24 2.13-2.028.56.24 1.16.36 1.78.36 4.72 0 8.56-4.26 8.56-9.52 0-4.9-3.9-8.84-9.142-8.84z"></path></svg>
+            </a>
+        </div>
+    </div>
+    <div class="footer-copyright">
         <p data-pt="© 2025 Sophia Alberton. Todos os direitos reservados." data-en="© 2025 Sophia Alberton. All rights reserved.">&copy; 2025 Sophia Alberton. Todos os direitos reservados.</p>
-    </footer>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
