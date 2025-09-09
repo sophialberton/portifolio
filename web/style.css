@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    /* Ajusta o ponto de parada da rolagem para não esconder o título atrás do menu fixo */
+    scroll-padding-top: 80px; 
+}
 :root {
     /* Light Mode Palette */
     --background: #f6ebdd;
@@ -7,6 +12,22 @@
     --accent: #8e6d86;
     --card-bg: #ffffff;
     --shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilo para TODAS as seções principais terem tela cheia */
+section {
+    min-height: 100vh; /* Altura mínima igual à altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Garante que o container dentro da seção não estique demais */
+section .container {
+    width: 100%;
 }
 
 body.dark-mode {
@@ -222,7 +243,9 @@ footer {
     transition: width 0.4s ease;
 }
 
-.nav-links a:hover::after {
+/* Modifique esta regra existente */
+.nav-links a:hover::after,
+.nav-links a.active::after { /* Adicione ", .nav-links a.active::after" */
     width: 100%;
 }
 

@@ -3,7 +3,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('lang-toggle');
     const githubStatsCard = document.getElementById('github-stats-card');
     const githubLangsCard = document.getElementById('github-langs-card');
+    // --- LÓGICA DE NAVEGAÇÃO COM SCROLL SUAVE ---
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main section');
+    const header = document.querySelector('header');
 
+    // Função de rolagem suave
+    const smoothScroll = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            // Calcula a posição do topo da seção mais o deslocamento do header
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetSection.offsetTop - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // Adiciona o evento de clique a todos os links da navegação
+    navLinks.forEach(link => {
+        link.addEventListener('click', smoothScroll);
+    });
+
+    // Função para destacar o link ativo enquanto rola a página
+    const highlightCurrentSection = () => {
+        let currentSectionId = '';
+        const headerHeight = header.offsetHeight;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight - 50; // Um pequeno offset extra
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSectionId = '#' + section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === currentSectionId) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    // Adiciona o evento de scroll na janela
+    window.addEventListener('scroll', highlightCurrentSection);
     // --- LÓGICA DE TRADUÇÃO AUTOMATIZADA ---
     const setLanguage = (lang) => {
         // Seleciona todos os elementos que têm traduções
