@@ -697,3 +697,77 @@ footer {
     color: var(--card-bg);
     transform: translateY(-3px);
 }
+/* ========================================= */
+/* ESTILOS PARA O SKILL CARD (CORRIGIDO)     */
+/* ========================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.skill-card-item {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden; /* Essencial para a animação funcionar */
+}
+
+.skill-card-item:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+}
+
+.skill-card-item:hover .skill-card__header {
+    height: 40px; /* Header encolhe */
+}
+
+.skill-card-item:hover .skill-card__header .skill-card__icon {
+    transform: translateX(-50%) translateY(-50%) scale(0.6);
+}
+
+.skill-card-item:hover .skill-card__body {
+    height: 60px; /* Corpo expande */
+    opacity: 1;
+}
+
+.skill-card-item .skill-card__header {
+    position: relative;
+    height: 100px; /* Altura inicial do header */
+    transition: height .4s ease;
+    overflow: hidden;
+}
+
+.skill-card-item .skill-card__header .skill-card__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    transition: transform .4s ease;
+    object-fit: contain;
+}
+
+.skill-card-item .skill-card__body {
+    height: 0; /* Começa com altura 0 para ficar escondido */
+    opacity: 0; /* Começa transparente */
+    transition: height .4s ease, opacity .4s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-card-item .skill-card__body .skill-card__title {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text);
+    padding: 0 10px; /* Evita que o texto quebre em nomes longos */
+    text-align: center; /* Garante a centralização do texto */
+}
