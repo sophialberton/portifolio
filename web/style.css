@@ -424,7 +424,7 @@ footer {
 }
 
 /* ========================================= */
-/* ESTILOS PARA O GRID DE PROJETOS           */
+/* ESTILOS PARA O GRID DE PROJETOS (ATUALIZADO) */
 /* ========================================= */
 
 .projects-grid {
@@ -434,13 +434,31 @@ footer {
 }
 
 .project-item {
-    aspect-ratio: 4 / 3; /* Proporção da imagem (largura / altura) */
+    aspect-ratio: 4 / 3;
     position: relative;
     border-radius: 8px;
-    overflow: hidden; /* Esconde o conteúdo que sair do card */
+    overflow: hidden;
     background-color: var(--card-bg);
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Estilos para a imagem de fundo */
+    background-size: cover;
+    background-position: center;
+
+    /* Alinha o título na parte de baixo */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Overlay escuro para garantir a legibilidade do título */
+.project-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    transition: background-color 0.4s ease;
 }
 
 .project-item:hover {
@@ -448,80 +466,80 @@ footer {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Conteúdo que fica visível no hover */
 .project-content {
-    position: absolute;
-    inset: 0; /* Ocupa todo o espaço do .project-item */
+    position: relative; /* Mudado de absolute */
     padding: 1.5rem;
+    color: #fff;
+    z-index: 2; /* Para ficar acima do overlay ::before */
+    transition: all 0.4s ease;
+    
+    /* Centraliza o conteúdo (será usado no hover) */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Mantém o título embaixo por padrão */
     align-items: center;
     text-align: center;
-    
-    background: linear-gradient(45deg,
-      rgba(209, 134, 129, 0.85), /* Cor --primary com transparência */
-      rgba(142, 109, 134, 0.85) /* Cor --accent com transparência */
-    );
-
-    color: #fff;
-    opacity: 0; /* Começa invisível */
-    transform: scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.project-item:hover .project-content {
-    opacity: 1; /* Fica visível no hover */
-    transform: scale(1);
-}
-
+/* Título sempre visível */
 .project-content h3 {
     color: #fff;
     margin-bottom: 0.5rem;
+    transform: translateY(0); /* Estado inicial */
+    transition: transform 0.4s ease;
 }
 
-.project-content p {
-    margin-bottom: 1.5rem;
+/* Esconde a descrição e o botão por padrão */
+.project-content p,
+.project-content .cta-button {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px); /* Efeito de subir */
 }
 
-/* Estilo para o botão dentro do card de projeto */
+/* Efeito ao passar o mouse */
+.project-item:hover::before {
+    /* O overlay escuro some para dar lugar ao gradiente colorido */
+    background-color: rgba(0,0,0,0); 
+}
+
+.project-item:hover .project-content {
+    /* Centraliza todo o conteúdo */
+    justify-content: center; 
+    
+    /* Aplica o overlay colorido */
+    background: linear-gradient(45deg,
+      rgba(209, 134, 129, 0.9),
+      rgba(142, 109, 134, 0.9)
+    );
+    /* Ocupa o card inteiro */
+    position: absolute;
+    inset: 0;
+}
+
+.project-item:hover .project-content h3 {
+    transform: translateY(-10px); /* Sobe um pouco o título */
+}
+
+/* Mostra a descrição e o botão ao passar o mouse */
+.project-item:hover .project-content p,
+.project-item:hover .project-content .cta-button {
+    opacity: 1;
+    max-height: 200px; /* Altura suficiente para o conteúdo aparecer */
+    transform: translateY(0);
+}
+
+/* Botão dentro do card */
 .project-content .cta-button {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid #fff;
+    margin-top: 1rem;
 }
 .project-content .cta-button:hover {
     background: #fff;
     color: var(--primary);
-}
-.project-content .cta-button:hover span {
-    color: var(--primary);
-}
-
-
-/* Estilo para os cards de exemplo */
-.project-item.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--secondary);
-    background-image:
-     linear-gradient(to right, rgba(172, 191, 183, 0.05) 1px, transparent 1px),
-     linear-gradient(to bottom, rgba(172, 191, 183, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-}
-
-.project-item.placeholder::before {
-    content: 'Seu Projeto Aqui';
-}
-
-.project-item.placeholder .project-content {
-    /* Garante que o conteúdo do placeholder sobreponha o texto "Seu Projeto Aqui" */
-    background-color: transparent; /* Remove o fundo do conteúdo para ver o placeholder por baixo*/
-}
-
-.project-item.placeholder:hover::before {
-    opacity: 0; /* Esconde o texto do placeholder no hover */
 }
 
 /* ========================================= */
