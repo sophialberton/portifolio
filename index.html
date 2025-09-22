@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-pt="Sophia Alberton - Portfólio" data-en="Sophia Alberton - Portfolio">Sophia Alberton - Portfólio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<div class="background-grid"></div>
 <body>
+    <div class="background-grid"></div>
+
+    <nav class="side-nav">
+        <ul>
+            <li><a href="#intro" class="nav-dot active" data-section="intro" title="Início"></a></li>
+            <li><a href="#about" class="nav-dot" data-section="about" title="Sobre Mim"></a></li>
+            <li><a href="#skills" class="nav-dot" data-section="skills" title="Habilidades"></a></li>
+            <li><a href="#projects" class="nav-dot" data-section="projects" title="Projetos"></a></li>
+            <li><a href="#contact" class="nav-dot" data-section="contact" title="Contato"></a></li>
+        </ul>
+    </nav>
+
     <header>
-        <nav>
+        <nav class="top-nav">
             <div class="logo">Sophia Picasky Alberton</div>
             <ul class="nav-links">
                 <li><a href="#intro" data-pt="Início" data-en="Home">Início</a></li>
@@ -28,22 +39,36 @@
 
     <main>
         <section id="intro" class="container">
-    <div class="intro-content">
-        <h1 class="gradient-text" data-pt="Olá, Mundo! Eu sou a Sophia!" data-en="Hello, World! I'm Sophia!">Olá, Mundo! Eu sou a Sophia!</h1>
-        <p data-pt="Junior Fullstack Developer" data-en="Junior Fullstack Developer">Junior Fullstack Developer</p>
-        <div class="intro-buttons">
-            <a href="#projects" class="hero-btn hero-btn-primary" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</a>
-            <a href="#contact" class="hero-btn hero-btn-outline" data-pt="Entrar em Contato" data-en="Get in Touch">Entrar em Contato</a>
-        </div>
-    </div>
-</section>
+            <div class="intro-content">
+                <h1 class="gradient-text" data-pt="Olá, Mundo! Eu sou a Sophia!" data-en="Hello, World! I'm Sophia!">Olá, Mundo! Eu sou a Sophia!</h1>
+                <p data-pt="Junior Fullstack Developer" data-en="Junior Fullstack Developer">Junior Fullstack Developer</p>
+                <div class="intro-buttons">
+                    <a href="#projects" class="hero-btn hero-btn-primary" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</a>
+                    <a href="#contact" class="hero-btn hero-btn-outline" data-pt="Entrar em Contato" data-en="Get in Touch">Entrar em Contato</a>
+                </div>
+            </div>
+        </section>
 
         <section id="about" class="container">
             <h2 data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
-            <p data-pt="Sou uma desenvolvedora apaixonada por criar soluções que impactam positivamente a vida das pessoas, é extremamente satisfatório ver que meu trabalho da um retorno positivo, ver as reações de alívio das pessoas perante minhas automações agéis e websites intuitivos é extremamente reconfortante! O meu sonho no aréa profissional é entregar sempre suprindo todas as expectativos possíveis ao meu alcance, aprender algo novo a cada projeto entregue, ter liberdade de expressar minhas idéias para solução do problema e a total de liberdade de trabalhar no meu horário onde eu me sentir mais focada e produtiva."
-               data-en="I am a developer passionate about creating solutions that positively impact people's lives. It is extremely satisfying to see my work have a positive return, and seeing people's reactions of relief to my agile automations and intuitive websites is extremely comforting! My professional dream is to always deliver by meeting all possible expectations within my reach, learn something new with each project delivered, have the freedom to express my ideas to solve problems, and the total freedom to work on my own schedule where I feel most focused and productive.">
-               Sou uma desenvolvedora apaixonada por criar soluções que impactam positivamente a vida das pessoas, é extremamente satisfatório ver que meu trabalho da um retorno positivo, ver as reações de alívio das pessoas perante minhas automações agéis e websites intuitivos é extremamente reconfortante! O meu sonho no aréa profissional é entregar sempre suprindo todas as expectativos possíveis ao meu alcance, aprender algo novo a cada projeto entregue, ter liberdade de expressar minhas idéias para solução do problema e a total de liberdade de trabalhar no meu horário onde eu me sentir mais focada e produtiva.
-            </p>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://i.imgur.com/2c0X6iQ.png" alt="Imagem com códigos de programação">
+                </div>
+                <div class="about-text">
+                    <p data-pt="Sou uma desenvolvedora apaixonada por criar soluções que impactam positivamente a vida das pessoas, é extremamente satisfatório ver que meu trabalho da um retorno positivo, ver as reações de alívio das pessoas perante minhas automações agéis e websites intuitivos é extremamente reconfortante! O meu sonho no aréa profissional é entregar sempre suprindo todas as expectativos possíveis ao meu alcance, aprender algo novo a cada projeto entregue, ter liberdade de expressar minhas idéias para solução do problema e a total de liberdade de trabalhar no meu horário onde eu me sentir mais focada e produtiva."
+                       data-en="I am a developer passionate about creating solutions that positively impact people's lives. It is extremely satisfying to see my work have a positive return, and seeing people's reactions of relief to my agile automations and intuitive websites is extremely comforting! My professional dream is to always deliver by meeting all possible expectations within my reach, learn something new with each project delivered, have the freedom to express my ideas to solve problems, and the total freedom to work on my own schedule where I feel most focused and productive.">
+                       Sou uma desenvolvedora apaixonada por criar soluções que impactam positivamente a vida das pessoas...
+                    </p>
+                </div>
+                <div class="about-cta">
+                    <h3 data-pt="O que posso fazer por você?" data-en="What can I do for you?">O que posso fazer por você?</h3>
+                    <p data-pt="Com minha experiência em desenvolvimento Fullstack, posso ajudar a transformar suas ideias em realidade, criando desde websites modernos e responsivos até automações inteligentes para otimizar processos. Vamos construir algo incrível juntos!"
+                       data-en="With my experience in Fullstack development, I can help turn your ideas into reality, creating everything from modern and responsive websites to intelligent automations to optimize processes. Let's build something amazing together!">
+                       Com minha experiência em desenvolvimento Fullstack, posso ajudar a transformar suas ideias em realidade...
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section id="skills" class="container">
